@@ -54,7 +54,6 @@ function App(): JSX.Element {
             }
           />
 
-          {/* Ruta de perfil con parámetro id */}
           <Route
             path="/profile/:id"
             element={
@@ -64,7 +63,6 @@ function App(): JSX.Element {
             }
           />
 
-          {/* Ruta de perfil por defecto (sin id) */}
           <Route
             path="/profile"
             element={

@@ -8,6 +8,7 @@ import {
   MdGroups,
   MdEmojiEvents,
   MdPerson,
+  MdGames,
 } from "react-icons/md";
 import { useNavigate } from "react-router";
 
@@ -113,9 +114,7 @@ export default function HomePage(): JSX.Element {
         </div>
       </section>
 
-      {/* MAIN CONTENT */}
       <main className="px-4 space-y-4">
-        {/* HERO / TORNEO */}
         <article className="bg-gradient-to-r from-[#0b1220] to-[#0b0f14] p-4 rounded-2xl shadow-lg border border-white/6">
           <div className="aspect-video rounded-lg overflow-hidden mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 animate-gradient">
             {/* Placeholder image area; replace with <img /> when you have assets */}
@@ -176,18 +175,17 @@ export default function HomePage(): JSX.Element {
         className="fixed bottom-4 left-4 right-4 bg-black/60 backdrop-blur-sm border border-white/6 rounded-2xl p-2 shadow-lg md:hidden"
       >
         <div className="flex justify-around items-center h-14">
-          <NavItem icon={<MdHome />} label="Inicio" active onClick={()=>navigate("/miPerfil")} />
-          <NavItem icon={<MdSearch />} label="Explorar" />
-          <NavItem icon={<MdGroups />} label="Grupos" />
-          <NavItem icon={<MdEmojiEvents />} label="Torneos" />
-          <NavItem icon={<MdPerson />} label="Perfil" />
+          <NavItem icon={<MdHome />} label="Inicio" active onClick={()=>navigate("/")} />
+          <NavItem icon={<MdSearch />} label="Explorar" onClick={()=>navigate("/players")} />
+          <NavItem icon={<MdGames />} label="Juegos" onClick={()=>navigate("/games")} />
+          <NavItem icon={<MdEmojiEvents />} label="Torneos" onClick={()=>navigate("/tournaments")} />
+          <NavItem icon={<MdPerson />} label="Perfil" onClick={()=>navigate("/miPerfil/:id")} />
         </div>
       </nav>
     </div>
   );
 }
 
-/* ---------- COMPONENTES ---------- */
 
 function QuickItem({ icon, label, active = false, onClick }: QuickItemProps) {
   return (
